@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import com.jfoenix.controls.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" 
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.taggy.controller.LoginController"
+            prefHeight="700.0" prefWidth="1000.0"
+            styleClass="gradient-background">
+    
+    <!-- Login Card -->
+    <VBox fx:id="loginCard" alignment="CENTER" spacing="25" styleClass="glass-card"
+          AnchorPane.topAnchor="100" AnchorPane.leftAnchor="300" 
+          AnchorPane.rightAnchor="300" AnchorPane.bottomAnchor="100"
+          prefWidth="400">
+        
+        <!-- Header -->
+        <VBox alignment="CENTER" spacing="10">
+            <Label text="Welcome Back!" styleClass="header-label" 
+                   style="-fx-text-fill: #f78fb3;"/>
+            <Label text="Login to continue shopping" styleClass="body-label"/>
+        </VBox>
+        
+        <!-- Username Field -->
+        <VBox spacing="8">
+            <Label text="Username" style="-fx-font-weight: 600; -fx-text-fill: #666666;"/>
+            <HBox alignment="CENTER_LEFT" spacing="10" styleClass="text-field">
+                <FontAwesomeIconView glyphName="USER" size="18" fill="#f78fb3"/>
+                <TextField fx:id="usernameField" promptText="Enter username" 
+                          style="-fx-background-color: transparent; -fx-border-width: 0;"
+                          prefWidth="300"/>
+            </HBox>
+        </VBox>
+        
+        <!-- Password Field -->
+        <VBox spacing="8">
+            <Label text="Password" style="-fx-font-weight: 600; -fx-text-fill: #666666;"/>
+            <HBox alignment="CENTER_LEFT" spacing="10" styleClass="password-field">
+                <FontAwesomeIconView glyphName="LOCK" size="18" fill="#f78fb3"/>
+                <PasswordField fx:id="passwordField" promptText="Enter password" 
+                              style="-fx-background-color: transparent; -fx-border-width: 0;"
+                              prefWidth="300"/>
+            </HBox>
+        </VBox>
+        
+        <!-- Error Label -->
+        <Label fx:id="errorLabel" text="" style="-fx-text-fill: #F44336; -fx-font-weight: 600;"
+               visible="false"/>
+        
+        <!-- Login Button -->
+        <JFXButton fx:id="loginButton" text="Login" onAction="#handleLogin"
+                   prefWidth="300" prefHeight="45" styleClass="button"
+                   style="-fx-font-size: 16px; -fx-font-weight: 700;"/>
+        
+        <!-- Divider -->
+        <HBox alignment="CENTER" spacing="10">
+            <Separator prefWidth="100"/>
+            <Label text="OR" style="-fx-text-fill: #999999; -fx-font-size: 12px;"/>
+            <Separator prefWidth="100"/>
+        </HBox>
+        
+        <!-- Sign Up Link -->
+        <HBox alignment="CENTER" spacing="5">
+            <Label text="Don't have an account?" style="-fx-text-fill: #666666;"/>
+            <Label fx:id="signupLink" text="Sign Up" onMouseClicked="#handleGoToSignup"
+                   style="-fx-text-fill: #f78fb3; -fx-font-weight: 700; -fx-cursor: hand; -fx-underline: true;"/>
+        </HBox>
+        
+        <!-- Back to Home -->
+        <Button text="← Back to Home" onAction="#handleBackToHome"
+                style="-fx-background-color: transparent; -fx-text-fill: #999999; -fx-cursor: hand;"/>
+        
+    </VBox>
+    
+</AnchorPane>

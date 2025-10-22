@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+<BorderPane xmlns="http://javafx.com/javafx" 
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.taggy.controller.DashboardController"
+            prefHeight="750.0" prefWidth="1200.0">
+    
+    <!-- Sidebar -->
+    <left>
+        <VBox fx:id="sidebar" styleClass="sidebar" prefWidth="250" spacing="5"
+              BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="20" bottom="20"/>
+            </padding>
+            
+            <!-- Logo Section -->
+            <VBox alignment="CENTER" spacing="10" style="-fx-padding: 0 0 30 0;">
+                <Label text="TAGGY" style="-fx-font-size: 28px; -fx-font-weight: 700; -fx-text-fill: #f78fb3;"/>
+                <Label text="Smart Shopping" style="-fx-font-size: 12px; -fx-text-fill: #999999;"/>
+            </VBox>
+            
+            <!-- User Info -->
+            <VBox fx:id="userInfoBox" alignment="CENTER" spacing="10" style="-fx-padding: 0 0 20 0; -fx-background-color: rgba(247, 143, 179, 0.1); -fx-background-radius: 15px; -fx-padding: 15px; -fx-cursor: hand;">
+                <FontAwesomeIconView glyphName="USER_CIRCLE" size="40" fill="#f78fb3"/>
+                <Label fx:id="usernameLabel" text="User" style="-fx-font-weight: 700; -fx-font-size: 14px;"/>
+                <Label fx:id="walletLabel" text="₹ 0.00" style="-fx-font-size: 12px; -fx-text-fill: #4CAF50; -fx-font-weight: 600;"/>
+                <Label text="View Profile" style="-fx-font-size: 10px; -fx-text-fill: #f78fb3; -fx-underline: true;"/>
+            </VBox>
+            
+            <!-- Navigation Buttons -->
+            <Button fx:id="homeButton" onAction="#handleHome" styleClass="sidebar-button, sidebar-button-active">
+                <graphic>
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <FontAwesomeIconView glyphName="HOME" size="20"/>
+                        <Label text="Home"/>
+                    </HBox>
+                </graphic>
+            </Button>
+            
+            <Button fx:id="compareButton" onAction="#handleCompare" styleClass="sidebar-button">
+                <graphic>
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <FontAwesomeIconView glyphName="EXCHANGE" size="20"/>
+                        <Label text="Compare Prices"/>
+                    </HBox>
+                </graphic>
+            </Button>
+            
+            <Button fx:id="cartButton" onAction="#handleCart" styleClass="sidebar-button">
+                <graphic>
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <FontAwesomeIconView glyphName="SHOPPING_CART" size="20"/>
+                        <Label text="My Cart"/>
+                        <Label fx:id="cartBadge" text="0" styleClass="cart-badge" visible="false"/>
+                    </HBox>
+                </graphic>
+            </Button>
+            
+            <Button fx:id="walletButton" onAction="#handleWallet" styleClass="sidebar-button">
+                <graphic>
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <FontAwesomeIconView glyphName="CREDIT_CARD" size="20"/>
+                        <Label text="Wallet"/>
+                    </HBox>
+                </graphic>
+            </Button>
+            
+            <!-- Spacer -->
+            <Region VBox.vgrow="ALWAYS"/>
+            
+            <!-- Logout Button -->
+            <Button fx:id="logoutButton" onAction="#handleLogout" styleClass="sidebar-button"
+                    style="-fx-text-fill: #F44336;">
+                <graphic>
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <FontAwesomeIconView glyphName="SIGN_OUT" size="20" fill="#F44336"/>
+                        <Label text="Logout" style="-fx-text-fill: #F44336;"/>
+                    </HBox>
+                </graphic>
+            </Button>
+            
+        </VBox>
+    </left>
+    
+    <!-- Main Content Area -->
+    <center>
+        <VBox spacing="0">
+            
+            <!-- Top Bar -->
+            <HBox styleClass="topbar" alignment="CENTER_LEFT" spacing="20">
+                <padding>
+                    <Insets top="15" bottom="15" left="30" right="30"/>
+                </padding>
+                
+                <Label fx:id="pageTitle" text="Home" style="-fx-font-size: 24px; -fx-font-weight: 700; -fx-text-fill: #2d2d2d;"/>
+                
+                <Region HBox.hgrow="ALWAYS"/>
+                
+                <!-- Search Bar -->
+                <TextField fx:id="searchField" promptText="Search products..." styleClass="search-bar" 
+                          prefWidth="300" onAction="#handleSearch"/>
+                
+                <FontAwesomeIconView glyphName="BELL" size="24" fill="#999999" style="-fx-cursor: hand;"/>
+            </HBox>
+            
+            <!-- Content Area -->
+            <ScrollPane fx:id="contentArea" fitToWidth="true" fitToHeight="true"
+                       style="-fx-background-color: #fafafa; -fx-background: #fafafa;">
+                <VBox fx:id="mainContent" spacing="20" style="-fx-background-color: #fafafa;">
+                    <padding>
+                        <Insets top="30" bottom="30" left="30" right="30"/>
+                    </padding>
+                </VBox>
+            </ScrollPane>
+            
+        </VBox>
+    </center>
+    
+</BorderPane>

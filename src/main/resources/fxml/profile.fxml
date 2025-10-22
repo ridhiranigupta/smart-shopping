@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.taggy.controller.ProfileController"
+           styleClass="root">
+    
+    <VBox spacing="25" styleClass="profile-container">
+        <padding>
+            <Insets top="30" right="50" bottom="30" left="50"/>
+        </padding>
+        
+        <!-- Header with Back Button -->
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <Button fx:id="backButton" onAction="#handleBack" styleClass="back-button">
+                <graphic>
+                    <FontAwesomeIconView glyphName="ARROW_LEFT" size="18" fill="white"/>
+                </graphic>
+            </Button>
+            <Label text="My Profile" styleClass="profile-title"/>
+        </HBox>
+        
+        <!-- Profile Icon -->
+        <VBox alignment="CENTER" spacing="15" styleClass="profile-icon-section">
+            <StackPane styleClass="profile-avatar">
+                <FontAwesomeIconView glyphName="USER_CIRCLE" size="80" fill="#f78fb3"/>
+            </StackPane>
+            <Label fx:id="usernameDisplay" styleClass="username-display"/>
+            <Label fx:id="emailDisplay" styleClass="email-display"/>
+        </VBox>
+        
+        <!-- Profile Form -->
+        <ScrollPane fitToWidth="true" styleClass="profile-scroll">
+            <VBox spacing="20" styleClass="profile-form">
+                <!-- Personal Information Section -->
+                <VBox spacing="15">
+                    <Label text="Personal Information" styleClass="section-header"/>
+                    
+                    <VBox spacing="8">
+                        <Label text="Full Name" styleClass="field-label"/>
+                        <TextField fx:id="fullNameField" promptText="Enter your full name" styleClass="profile-text-field"/>
+                    </VBox>
+                    
+                    <VBox spacing="8">
+                        <Label text="Phone Number" styleClass="field-label"/>
+                        <TextField fx:id="phoneField" promptText="Enter 10-digit mobile number" styleClass="profile-text-field"/>
+                    </VBox>
+                    
+                    <VBox spacing="8">
+                        <Label text="Date of Birth" styleClass="field-label"/>
+                        <DatePicker fx:id="dobPicker" promptText="Select date of birth" styleClass="profile-date-picker"/>
+                    </VBox>
+                </VBox>
+                
+                <Separator/>
+                
+                <!-- Shipping Address Section -->
+                <VBox spacing="15">
+                    <Label text="Shipping Address" styleClass="section-header"/>
+                    
+                    <VBox spacing="8">
+                        <Label text="Address Line 1" styleClass="field-label"/>
+                        <TextField fx:id="address1Field" promptText="House No., Building Name" styleClass="profile-text-field"/>
+                    </VBox>
+                    
+                    <VBox spacing="8">
+                        <Label text="Address Line 2" styleClass="field-label"/>
+                        <TextField fx:id="address2Field" promptText="Road Name, Area, Colony" styleClass="profile-text-field"/>
+                    </VBox>
+                    
+                    <HBox spacing="15">
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="City" styleClass="field-label"/>
+                            <TextField fx:id="cityField" promptText="City" styleClass="profile-text-field"/>
+                        </VBox>
+                        
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="State" styleClass="field-label"/>
+                            <TextField fx:id="stateField" promptText="State" styleClass="profile-text-field"/>
+                        </VBox>
+                    </HBox>
+                    
+                    <HBox spacing="15">
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="PIN Code" styleClass="field-label"/>
+                            <TextField fx:id="pinCodeField" promptText="6-digit PIN" styleClass="profile-text-field"/>
+                        </VBox>
+                        
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="Country" styleClass="field-label"/>
+                            <TextField fx:id="countryField" text="India" styleClass="profile-text-field"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+                
+                <Separator/>
+                
+                <!-- Additional Information -->
+                <VBox spacing="15">
+                    <Label text="Additional Information" styleClass="section-header"/>
+                    
+                    <VBox spacing="8">
+                        <Label text="Alternate Phone" styleClass="field-label"/>
+                        <TextField fx:id="alternatePhoneField" promptText="Alternate contact number (optional)" styleClass="profile-text-field"/>
+                    </VBox>
+                </VBox>
+                
+                <!-- Action Buttons -->
+                <HBox spacing="20" alignment="CENTER" styleClass="button-box">
+                    <padding>
+                        <Insets top="20" bottom="10"/>
+                    </padding>
+                    <Button text="Save Changes" onAction="#handleSave" styleClass="save-button"/>
+                    <Button text="Cancel" onAction="#handleBack" styleClass="cancel-button"/>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </VBox>
+</StackPane>

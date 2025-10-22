@@ -1,0 +1,17 @@
+com\taggy\model\Session.class
+com\taggy\controller\ProductDetailController.class
+com\taggy\controller\ProfileController.class
+com\taggy\Main.class
+com\taggy\controller\DashboardController.class
+com\taggy\controller\SignupController.class
+com\taggy\model\Product.class
+com\taggy\Launcher.class
+com\taggy\util\DatabaseConnection.class
+module-info.class
+com\taggy\controller\HomepageController.class
+com\taggy\util\SceneManager.class
+com\taggy\controller\LoginController.class
+com\taggy\model\User.class
+com\taggy\util\AnimationUtil.class
+com\taggy\model\CartItem.class
+com\taggy\util\AlertUtil.class

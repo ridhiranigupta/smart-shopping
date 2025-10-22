@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.taggy.controller.ProductDetailController"
+           styleClass="root">
+    
+    <VBox spacing="20" styleClass="product-detail-container">
+        <padding>
+            <Insets top="20" right="40" bottom="20" left="40"/>
+        </padding>
+        
+        <!-- Header with Back Button -->
+        <HBox alignment="CENTER_LEFT" spacing="15">
+            <Button fx:id="backButton" onAction="#handleBack" styleClass="back-button">
+                <graphic>
+                    <FontAwesomeIconView glyphName="ARROW_LEFT" size="18" fill="white"/>
+                </graphic>
+            </Button>
+            <Label fx:id="productNameLabel" styleClass="product-detail-title"/>
+        </HBox>
+        
+        <!-- Main Content -->
+        <HBox spacing="40" VBox.vgrow="ALWAYS">
+            <!-- Left Side - Product Image Placeholder -->
+            <VBox alignment="CENTER" spacing="20" styleClass="product-image-section">
+                <FontAwesomeIconView glyphName="IMAGE" size="120" fill="#e0e0e0"/>
+                <Label fx:id="categoryLabel" styleClass="product-category-badge"/>
+            </VBox>
+            
+            <!-- Right Side - Price Comparison -->
+            <VBox spacing="25" HBox.hgrow="ALWAYS" styleClass="price-comparison-section">
+                <Label text="Price Comparison" styleClass="section-title"/>
+                
+                <!-- Amazon Price Card -->
+                <HBox alignment="CENTER_LEFT" spacing="20" styleClass="price-card">
+                    <VBox alignment="CENTER" spacing="5" prefWidth="100">
+                        <FontAwesomeIconView glyphName="AMAZON" size="36" fill="#FF9900"/>
+                        <Label text="Amazon" styleClass="store-name"/>
+                    </VBox>
+                    <VBox spacing="5" HBox.hgrow="ALWAYS">
+                        <Label fx:id="amazonPriceLabel" styleClass="price-label"/>
+                        <Label fx:id="amazonSavingsLabel" styleClass="savings-label"/>
+                    </VBox>
+                    <Button fx:id="addAmazonButton" text="Add to Cart" onAction="#handleAddAmazon" styleClass="add-cart-button"/>
+                </HBox>
+                
+                <!-- Flipkart Price Card -->
+                <HBox alignment="CENTER_LEFT" spacing="20" styleClass="price-card">
+                    <VBox alignment="CENTER" spacing="5" prefWidth="100">
+                        <FontAwesomeIconView glyphName="SHOPPING_CART" size="36" fill="#047BD5"/>
+                        <Label text="Flipkart" styleClass="store-name"/>
+                    </VBox>
+                    <VBox spacing="5" HBox.hgrow="ALWAYS">
+                        <Label fx:id="flipkartPriceLabel" styleClass="price-label"/>
+                        <Label fx:id="flipkartSavingsLabel" styleClass="savings-label"/>
+                    </VBox>
+                    <Button fx:id="addFlipkartButton" text="Add to Cart" onAction="#handleAddFlipkart" styleClass="add-cart-button"/>
+                </HBox>
+                
+                <!-- Myntra Price Card -->
+                <HBox alignment="CENTER_LEFT" spacing="20" styleClass="price-card">
+                    <VBox alignment="CENTER" spacing="5" prefWidth="100">
+                        <FontAwesomeIconView glyphName="SHOPPING_BAG" size="36" fill="#FF3F6C"/>
+                        <Label text="Myntra" styleClass="store-name"/>
+                    </VBox>
+                    <VBox spacing="5" HBox.hgrow="ALWAYS">
+                        <Label fx:id="myntraPriceLabel" styleClass="price-label"/>
+                        <Label fx:id="myntraSavingsLabel" styleClass="savings-label"/>
+                    </VBox>
+                    <Button fx:id="addMyntraButton" text="Add to Cart" onAction="#handleAddMyntra" styleClass="add-cart-button"/>
+                </HBox>
+                
+                <!-- Best Deal Highlight -->
+                <VBox spacing="10" styleClass="best-deal-card">
+                    <Label text="🏆 Best Deal" styleClass="best-deal-title"/>
+                    <HBox alignment="CENTER_LEFT" spacing="15">
+                        <Label fx:id="bestStoreLabel" styleClass="best-store-label"/>
+                        <Label fx:id="bestPriceLabel" styleClass="best-price-label"/>
+                        <Label fx:id="savingsAmountLabel" styleClass="savings-amount-label"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+        </HBox>
+    </VBox>
+</StackPane>

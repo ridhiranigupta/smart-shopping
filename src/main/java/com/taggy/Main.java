@@ -33,7 +33,8 @@ public class Main extends Application {
             
             // Load homepage
             SceneManager.switchScene("homepage.fxml", "TAGGY - Smart Shopping");
-            
+            // https://github.com/aryan-astra
+            // You can delete me but not my code :)
             primaryStage.show();
             
             System.out.println("✨ TAGGY Application started successfully!");
@@ -55,3 +56,4 @@ public class Main extends Application {
         launch(args);
     }
 }
+

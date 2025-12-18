@@ -14,6 +14,7 @@
 </div>
 
 ---
+<img width="1920" height="1020" alt="Screenshot 2025-10-24 133245" src="https://github.com/user-attachments/assets/120ad41d-3d6a-42da-8a22-c082f43fb23d" />
 
 ## 📖 About
 
@@ -235,3 +236,4 @@ Built with ❤️ by Ridhi
 Made with JavaFX • Powered by MySQL • Styled with Love
 
 </div>
+
